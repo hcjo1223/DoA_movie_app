@@ -1,56 +1,61 @@
-import { tsExpressionWithTypeArguments } from "@babel/types";
 import React from "react";
+import axios from "axios";
+import Movie from "./Movie";
 
-/* 
-function component는 function이고 return을 통해 screen에 표시
-class component는 class이고 react component로 부터 확장되고 screen에 표시
-react는 자동적으로 class component의 render method를 실행한다.
-*/
 class App extends React.Component{
-  constructor(props) {
-    super(props);
-    console.log("constructor")
-  }
-
-  // state는 object이다.
-  // state에는 바꾸고 싶은 data를 넣는다.
   state = {
-    count: 0
+    isLoading: true,
+    movies: []
   };
-  add = () => {
-    this.setState(current => ({ count: current.count + 1}));
+  // 비동기 함수로 -> function()앞에 async 키워드
+  // await 키워드 Promise기반 함수 앞에 놓음 -> 코드 완료까지 기다림
+  getMovies = async () => {
+    const {
+      data: {
+        data: {movies}
+      }
+    } = await axios.get(
+      "https://yts.mx/api/v2/list_movies.json?sort_by=like_count"
+    );
+    this.setState({ movies, isLoading: false });  // movies:movies 로 써도 됨
   };
-  minus = () => {
-    this.setState(current => ({ count: current.count - 1}))
-  };
-
-  componentDidMount() {
-    console.log("component rendered");
-  }
-  componentDidUpdate() {
-    console.log("I just updated")
-  }
-  componentWillUnmount() {
-    console.log("Good bye Cruel world")
-  }
-  /*
-  button에는 onClick이라는 prop이 기본적으로 있다.
-  this.add()에서 ()는 즉시 함수를 호출해라는 것이고,
-  this.add는 click했을 때만 함수를 호출하는 것이다.
-  */
+  componentDidMount(){
+    this.getMovies();
+  } 
   render(){
-    console.log("I`m rendering")
+    const { isLoading, movies } = this.state;
     return (
-    <div>
-      <h1>The Number is: {this.state.count}</h1>
-      <button onClick={this.add}>Add</button>
-      <button onClick={this.minus}>Minus</button>
-    </div>
-      );
+        <div>
+          {isLoading 
+            ? "Loading..." 
+            : movies.map(movie => (
+              <Movie
+                key={movie.id}
+                id={movie.id}
+                year={movie.year}
+                title={movie.title}
+                summary={movie.summary}
+                poster={movie.medium_cover_image}
+              />
+              ))}
+        </div>
+    );
   }
 }
 
 /*
+Class Components and State
+  function component는 function이고 return을 통해 screen에 표시
+  class component는 class이고 react component로 부터 확장되고 screen에 표시
+  react는 자동적으로 class component의 render method를 실행한다.
+
+  state는 object이다.
+  state에는 바꾸고 싶은 data를 넣는다.
+
+  button에는 onClick이라는 prop이 기본적으로 있다.
+  this.add()에서 ()는 즉시 함수를 호출해라는 것이고,
+  this.add는 click했을 때만 함수를 호출하는 것이다.
+
 Component Life Cycle
 ※ Mounting - component의 태어남
   constructor()
@@ -69,5 +74,7 @@ Component Life Cycle
 
 setState()를 호출 => component를 호출 => render를 호출
 => 업데이트 완료 후 coponentDidUpdate() 실행
+
+state 선언은 필수가 아니다.
 */
 export default App;
