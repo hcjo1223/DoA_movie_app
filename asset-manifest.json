@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/DoA_movie_app/static/css/main.4229d6fb.chunk.css",
-    "main.js": "/DoA_movie_app/static/js/main.9801799f.chunk.js",
-    "main.js.map": "/DoA_movie_app/static/js/main.9801799f.chunk.js.map",
+    "main.css": "/DoA_movie_app/static/css/main.e04040cc.chunk.css",
+    "main.js": "/DoA_movie_app/static/js/main.deba2f6c.chunk.js",
+    "main.js.map": "/DoA_movie_app/static/js/main.deba2f6c.chunk.js.map",
     "runtime-main.js": "/DoA_movie_app/static/js/runtime-main.96fd78fa.js",
     "runtime-main.js.map": "/DoA_movie_app/static/js/runtime-main.96fd78fa.js.map",
-    "static/js/2.965ff369.chunk.js": "/DoA_movie_app/static/js/2.965ff369.chunk.js",
-    "static/js/2.965ff369.chunk.js.map": "/DoA_movie_app/static/js/2.965ff369.chunk.js.map",
+    "static/js/2.29e936b0.chunk.js": "/DoA_movie_app/static/js/2.29e936b0.chunk.js",
+    "static/js/2.29e936b0.chunk.js.map": "/DoA_movie_app/static/js/2.29e936b0.chunk.js.map",
     "index.html": "/DoA_movie_app/index.html",
-    "static/css/main.4229d6fb.chunk.css.map": "/DoA_movie_app/static/css/main.4229d6fb.chunk.css.map",
-    "static/js/2.965ff369.chunk.js.LICENSE.txt": "/DoA_movie_app/static/js/2.965ff369.chunk.js.LICENSE.txt"
+    "static/css/main.e04040cc.chunk.css.map": "/DoA_movie_app/static/css/main.e04040cc.chunk.css.map",
+    "static/js/2.29e936b0.chunk.js.LICENSE.txt": "/DoA_movie_app/static/js/2.29e936b0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.96fd78fa.js",
-    "static/js/2.965ff369.chunk.js",
-    "static/css/main.4229d6fb.chunk.css",
-    "static/js/main.9801799f.chunk.js"
+    "static/js/2.29e936b0.chunk.js",
+    "static/css/main.e04040cc.chunk.css",
+    "static/js/main.deba2f6c.chunk.js"
   ]
 }
