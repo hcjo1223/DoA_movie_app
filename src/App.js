@@ -5,6 +5,7 @@ import About from "./routes/About";
 import Detail from "./routes/Detail";
 import Navigation from "./components/Navigation";
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.css';
 
 // 두 개의 중요한 props가 필요합니다. 
 // 하나는 렌더링할 화면이고 다른 하나는 수행 할 URL입니다.

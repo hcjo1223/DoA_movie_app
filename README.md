@@ -1,6 +1,8 @@
 # Movie App
 
-React JS Fundamentals Course
+## 🔗 Demo
+
+## 🖥 Preview
 
 ## 🔥 Stack
 
